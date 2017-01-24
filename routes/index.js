@@ -28,6 +28,7 @@ router.post('/auth/signup', (req, res, next)  =>  {
       email: req.body.email,
       password: bcrypt.hashSync(req.body.password, 7) 
       } 
+  if(V.validUser(userInfo)) {
 
   Q.getEmail(userInfo.email)
     .then((result)  =>  {
@@ -41,6 +42,10 @@ router.post('/auth/signup', (req, res, next)  =>  {
         res.redirect('error')
         }
     })
+  }  else  {
+    res.redirect('error')
+  }
+
 
 })
 

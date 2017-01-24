@@ -1,7 +1,7 @@
 module.exports = {
-    validate: function(email, password)  {
-    if(email == result.email && bcrypt.compareSync(password, result.password))    {
-        return true
-    }
+    validUser: function(user)  {
+   const validEmail = typeof user.email === "string" && user.email.trim() != '';
+   const validPassword = typeof user.password === "string" && user.password.trim() != '';
+   return validEmail && validPassword
     }
 }
