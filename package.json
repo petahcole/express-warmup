@@ -1,0 +1,32 @@
+{
+  "name": "express-warmup",
+  "version": "0.0.0",
+  "private": true,
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+  "dependencies": {
+    "bcrypt": "^1.0.2",
+    "body-parser": "~1.15.2",
+    "cookie-parser": "~1.4.3",
+    "debug": "~2.2.0",
+    "express": "^4.14.0",
+    "hbs": "~4.0.1",
+    "knex": "^0.12.6",
+    "morgan": "~1.7.0",
+    "pg": "^6.1.2",
+    "serve-favicon": "~2.3.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/petahcole/express-warmup.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/petahcole/express-warmup/issues"
+  },
+  "homepage": "https://github.com/petahcole/express-warmup#readme"
+}
