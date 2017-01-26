@@ -46,7 +46,55 @@ router.post('/auth/signup', (req, res, next)  =>  {
     res.redirect('error')
   }
 
+})
 
+router.get('/shoes', (req, res, next)  =>  {
+  Q.getAll()
+    .then((result)  =>  {
+      res.json(result)
+    })
+    .catch((err)  =>  {
+      res.json(err)
+    })
+})
+router.post('/shoes', (req, res, next) =>  {
+  Q.postNew(req.body)
+    .then((result)  =>  {
+      res.json(result)
+    })
+    .catch((err)  =>  {
+      res.json(err)
+    })
+})   
+
+router.get('/shoes/:id', (req, res, next) =>  {
+  Q.getOne(req.params.id)
+    .then((result)  =>  {
+      res.json(result)
+    })
+    .catch((err)  =>  {
+      res.json(err)
+    })
+}) 
+
+router.put('/shoes/:id', (req, res, next) =>  {
+  Q.updateOne(req.body, req.params.id)
+    .then((result)  =>  {
+      res.json(result)
+    })
+    .catch((err)  =>  {
+      res.json(err)
+    })
+})
+
+router.delete('/shoes/:id', (req, res, next)  =>  {
+  Q.deleteOne(req.params.id)
+    .then((result)  =>  {
+      res.json(result)
+    })
+    .catch((err)  =>  {
+      res.json(err)
+    })
 })
 
 
